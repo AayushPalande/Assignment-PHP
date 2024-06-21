@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report Form</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f7f7; /* Light gray background color for body */
+        }
+        .container {
+            background-color: #ffffff; /* White background color for the container */
+            background-image: url("dom-fou-YRMWVcdyhmI-unsplash.jpg"); /* Replace with your desired background image URL */
+            background-size: cover;
+            background-position: center;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Student Report Form</h2>
+        <form id="reportForm" action="generate_report.php" method="post">
+            <!-- Student ID -->
+            <div class="form-group">
+                <label for="student_id">Student ID <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="student_id" name="student_id" required>
+            </div>
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="first_name">First Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="first_name" name="first_name" pattern="[A-Za-z]+" title="Alphabets only" required>
+            </div>
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="last_name">Last Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="last_name" name="last_name" pattern="[A-Za-z]+" title="Alphabets only" required>
+            </div>
+            <!-- Batch / Class -->
+            <div class="form-group">
+                <label for="batch">Batch / Class</label>
+                <input type="text" class="form-control" id="batch" name="batch">
+            </div>
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email">Email Address <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <!-- Subjects -->
+            <div class="form-group">
+                <label>Subjects (Scores out of 100) <span class="text-danger">*</span></label>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="english">English</label>
+                        <input type="number" class="form-control" id="english" name="english" min="0" max="100" step="0.01" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="hindi">Hindi</label>
+                        <input type="number" class="form-control" id="hindi" name="hindi" min="0" max="100" step="0.01" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="math">Math</label>
+                        <input type="number" class="form-control" id="math" name="math" min="0" max="100" step="0.01" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="science">Science</label>
+                        <input type="number" class="form-control" id="science" name="science" min="0" max="100" step="0.01" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="history">History</label>
+                        <input type="number" class="form-control" id="history" name="history" min="0" max="100" step="0.01" required>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="geography">Geography</label>
+                        <input type="number" class="form-control" id="geography" name="geography" min="0" max="100" step="0.01" required>
+                    </div>
+                </div>
+            </div>
+            <!-- Remarks -->
+            <div class="form-group">
+                <label for="remarks">Remarks</label>
+                <textarea class="form-control" id="remarks" name="remarks" rows="3" maxlength="150"></textarea>
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Generate Report</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js" integrity="sha384-ZA3Qmz5AVToVoYh2sKtjv+SbgpD9WWHk8NmWOJ+09aI9HIVm7W8SQpw2RnUGjFup" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+YFV/a6NvPT0rS+G2Q7p3mxyPa950V+6RDI" crossorigin="anonymous"></script>
+</body>
+</html>
